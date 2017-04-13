@@ -1,0 +1,876 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="blog," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HexoAdmin安装部署，和Hexo内置标签整理">
+<meta name="keywords" content="blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo写作必备">
+<meta property="og:url" content="http://yoursite.com/2017/04/05/Hexo写作必备/index.html">
+<meta property="og:site_name" content="LOOSTUDY">
+<meta property="og:description" content="HexoAdmin安装部署，和Hexo内置标签整理">
+<meta property="og:image" content="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-index.png">
+<meta property="og:image" content="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-pw.png">
+<meta property="og:image" content="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-deploy.png">
+<meta property="og:image" content="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-mark-it-permalink.png">
+<meta property="og:updated_time" content="2017-04-13T05:25:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo写作必备">
+<meta name="twitter:description" content="HexoAdmin安装部署，和Hexo内置标签整理">
+<meta name="twitter:image" content="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-index.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/05/Hexo写作必备/"/>
+
+
+
+
+
+  <title> Hexo写作必备 | LOOSTUDY </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LOOSTUDY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">绽放时厚积薄发 等待时心如止水</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/Hexo写作必备/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loostudy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LOOSTUDY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+              
+                Hexo写作必备
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T09:40:32+08:00">
+                2017-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+              <span class="post-category" >
+              
+                <span class="post-meta-divider">|</span>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-folder-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">分类于</span>
+                
+                
+                  <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                    <a href="/categories/blog/" itemprop="url" rel="index">
+                      <span itemprop="name">blog</span>
+                    </a>
+                  </span>
+
+                  
+                  
+                
+              </span>
+            
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+
+      
+        <p>HexoAdmin安装部署，和Hexo内置标签整理</p>
+<a id="more"></a>
+<h2 id="hexoadmin"><a class="header-anchor" href="#hexoadmin">#</a>HexoAdmin<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h2>
+<p>HexoAdmin是一个可视化编辑，管理和部署Hexo博客的后台插件。</p>
+<h3 id="安装"><a class="header-anchor" href="#安装">#</a>安装</h3>
+<p>在hexo项目根目录安装</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  hexo-site npm <span class="keyword">install</span> <span class="comment">--save hexo-admin</span></div></pre></td></tr></table></figure>
+<h3 id="运行"><a class="header-anchor" href="#运行">#</a>运行</h3>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  hexo-site  hexo <span class="built_in">s</span></div></pre></td></tr></table></figure>
+<p>在浏览器打开 <code>http://localhost:4000/admin/</code></p>
+<p>主界面</p>
+<img title="主界面" src="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-index.png">
+<p>账户密码设置界面</p>
+<img title="账户密码设置" src="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-pw.png">
+<h3 id="写作"><a class="header-anchor" href="#写作">#</a>写作</h3>
+<p>这里没什么可说的，点击<code>New Post</code>之后就可以可视化编辑了。<br>
+值得一提的是，添加图片的时候不是拖拽，是<strong>复制粘贴 复制粘贴 复制粘贴！！！</strong></p>
+<h3 id="部署"><a class="header-anchor" href="#部署">#</a>部署</h3>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch hexo-deploy.sh<span class="comment">; chmod a+x hexo-deploy.sh</span></div></pre></td></tr></table></figure>
+<p>在<code>hexo-deploy.sh</code>内添加两行，参考https://github.com/vladpurga/hexo-admin-deploy-command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/usr/bin/env sh</span></div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p>编辑<code>_config.yml</code></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">admin</span>:</div><div class="line">  <span class="attribute">deployCommand</span>: <span class="string">'./hexo-deploy.sh'</span></div></pre></td></tr></table></figure>
+<img title="部署" src="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-admin-deploy.png">
+<p>按说明操作部署就OK了！</p>
+<hr>
+<p>在部署过程中遇到一个很诡异的问题：<br>
+指定<code>hexo d</code>命令报错：<br>
+<code>fatal: unable to access 'https://git.coding.net/loostudy/loostudy.coding.me.git/': The requested URL returned error: 500</code><br>
+但是仓库的确是存在可用的，找了半天原因，最后我把在根目录的<code>.git</code>文件夹删掉就一切正常了！之后<code>git init</code>重新初始化版本维护依旧正常，不知道什么原因。</p>
+<hr>
+<h2 id="next内置标签"><a class="header-anchor" href="#next内置标签">#</a>Next内置标签<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h2>
+<h3 id="文本居中引用"><a class="header-anchor" href="#文本居中引用">#</a>文本居中引用</h3>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">centerquote</span> %&#125;</span><span class="xml">居中引用</span><span class="template-tag">&#123;% <span class="name">endcenterquote</span> %&#125;</span><span class="xml"></span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 标签别名 --&gt;</span></div><div class="line"><span class="template-tag">&#123;% <span class="name">cq</span> %&#125;</span><span class="xml"> 居中引用 </span><span class="template-tag">&#123;% <span class="name">endcq</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
+<p>效果</p>
+<blockquote class="blockquote-center"><p>居中引用</p>
+</blockquote>
+<h3 id="笔记框note"><a class="header-anchor" href="#笔记框note">#</a>笔记框note</h3>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml">#可选class name &gt; default primary success info warning danger</span></div><div class="line"><span class="template-tag">&#123;% <span class="name">note</span> class_name %&#125;</span><span class="xml"> Content (md partial supported) </span><span class="template-tag">&#123;% <span class="name">endnote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
+<p>效果</p>
+<div class="note dafault"><p>default</p>
+</div>
+<div class="note primary"><p>primary</p>
+</div><div class="note success"><p>success</p>
+</div>
+<div class="note warning"><p>warning</p>
+</div><div class="note info"><p>info</p>
+</div>
+<div class="note danger"><p>danger</p>
+</div>
+<h2 id="hexo内置标签"><a class="header-anchor" href="#hexo内置标签">#</a>Hexo内置标签<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
+<h3 id="插入图片"><a class="header-anchor" href="#插入图片">#</a>插入图片</h3>
+<p><code>Markdown</code>格式插入图片无法修改大小，而且Hexo不支持<code>Markdown</code>的title，需要修改带下和增加title需要使用内放标签</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% img [<span class="keyword">class</span> names] /path/to/<span class="built_in">image</span> [<span class="built_in">width</span>] [<span class="built_in">height</span>] [title <span class="built_in">text</span> [alt <span class="built_in">text</span>]] %&#125;</div></pre></td></tr></table></figure>
+<h3 id="引用自己的文章"><a class="header-anchor" href="#引用自己的文章">#</a>引用自己的文章</h3>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> post文件名 别名 %&#125;</span><span class="xml"></span></div><div class="line">比如</div><div class="line"><span class="template-tag">&#123;% <span class="name">post_link</span> Hexo建站宝典 宝典！%&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
+<a href="/2017/04/05/Hexo建站宝典/" title="宝典！">宝典！</a>
+<h2 id="hexo-renderer-markdown-it插件"><a class="header-anchor" href="#hexo-renderer-markdown-it插件">#</a>hexo-renderer-markdown-it插件<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></h2>
+<h3 id="安装插件"><a class="header-anchor" href="#安装插件">#</a>安装插件</h3>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm un hexo-renderer-marked <span class="comment">--save</span></div><div class="line">npm i hexo-renderer-markdown-<span class="keyword">it</span> <span class="comment">--save</span></div></pre></td></tr></table></figure>
+<h3 id="配置-config-yml"><a class="header-anchor" href="#配置-config-yml">#</a>配置<code>_config.yml</code></h3>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Markdown-it config</span></div><div class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki/</span></div><div class="line"><span class="attr">markdown:</span></div><div class="line"><span class="attr">  render:</span></div><div class="line"><span class="attr">    html:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></div><div class="line"><span class="attr">    breaks:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></div><div class="line"><span class="attr">  plugins:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">markdown-it-abbr</span></div><div class="line"><span class="bullet">    -</span> <span class="string">markdown-it-footnote</span></div><div class="line"><span class="bullet">    -</span> <span class="string">markdown-it-ins</span></div><div class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sub</span></div><div class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sup</span></div><div class="line"> 	<span class="comment">#自动生成永久链接标记，鼠标点击标题后面的permalinkSymbol符号，会调转到新的固定链接。</span></div><div class="line"> 	<span class="comment">#使用这个链接可以直接跳转到这个标题位置</span></div><div class="line"><span class="attr">  anchors:</span></div><div class="line"><span class="attr">    level:</span> <span class="number">2</span></div><div class="line"><span class="attr">    collisionSuffix:</span> <span class="string">'v'</span></div><div class="line"><span class="attr">    permalink:</span> <span class="literal">true</span></div><div class="line"><span class="attr">    permalinkClass:</span> <span class="string">header-anchor</span></div><div class="line"><span class="attr">    permalinkSymbol:</span> <span class="string">'#'</span> <span class="comment">#默认标示太难看，改成#号</span></div></pre></td></tr></table></figure>
+<h3 id="永久链接"><a class="header-anchor" href="#永久链接">#</a>永久链接</h3>
+<p>配置<code>anchors</code>属性可以给每个标题添加永久链接</p>
+<img title="permalink" src="http://onx9sl8c2.bkt.clouddn.com/static/images/hexo-mark-it-permalink.png">
+<p>点击这个标记会生成形如这样的链接<br>
+<code>http://localhost:4000/2017/04/05/Hexo%E5%BB%BA%E7%AB%99%E5%AE%9D%E5%85%B8/#进阶</code><br>
+使用这个链接可以直接跳转到<a href="http://localhost:4000/2017/04/05/Hexo%E5%BB%BA%E7%AB%99%E5%AE%9D%E5%85%B8/#%E8%BF%9B%E9%98%B6" target="_blank" rel="external">这个标题</a></p>
+<h3 id="添加注脚"><a class="header-anchor" href="#添加注脚">#</a>添加注脚</h3>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">内容[^1]</div><div class="line">[<span class="symbol">^1</span>]: <span class="link">这里是注脚</span></div></pre></td></tr></table></figure>
+<h3 id="bug-内置more标签失效"><a class="header-anchor" href="#bug-内置more标签失效">#</a>[BUG]内置more标签失效</h3>
+<p>参照网页<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>解决插件本身造成的BUG。如果已经无效的话，请确认<code>&lt;!-- more --&gt;</code>上下行时候有空格，一定要空格隔开，要不也会失效</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">缩略描述 //缩略描述也是必须的</div><div class="line">//空格是必须的</div><div class="line"><span class="comment">&lt;!-- more --&gt;</span></div><div class="line">//空格是必须的</div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">Hexo-Admin主页</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://theme-next.iissnan.com/tag-plugins.html" target="_blank" rel="external">Next内置标签</a> <a href="#fnref2" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="external">Hexo内置标签</a> <a href="#fnref3" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="http://dangxia.github.io/2016/04/15/hexo/2016-04-15-use-hexo-renderer-markdown-it/" target="_blank" rel="external">use-hexo-renderer-markdown-it</a> <a href="#fnref4" class="footnote-backref">↩</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="http://lnxpgn.github.io/2015/08/01/hexo-markdown-issues/" target="_blank" rel="external">Hexo + Markdown issues</a> <a href="#fnref5" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/05/Hexo图床/" rel="next" title="Hexo图床">
+                <i class="fa fa-chevron-left"></i> Hexo图床
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/05/Hexo建站宝典/" rel="prev" title="Hexo建站宝典">
+                Hexo建站宝典 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg"
+               alt="loostudy" />
+          <p class="site-author-name" itemprop="name">loostudy</p>
+           
+              <p class="site-description motion-element" itemprop="description">绽放时厚积薄发 等待时心如止水</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wilfordw/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/loostudy" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1471779367/fans?topnav=1&wvr=6&mod=message&need_filter=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wang-ji-68-89/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/152848053/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/loostudy" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://git.oschina.net/_billwang" target="_blank" title="oschina">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  oschina
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexoadmin"><span class="nav-number">1.</span> <span class="nav-text">#HexoAdmin[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">#安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">1.2.</span> <span class="nav-text">#运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写作"><span class="nav-number">1.3.</span> <span class="nav-text">#写作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">1.4.</span> <span class="nav-text">#部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next内置标签"><span class="nav-number">2.</span> <span class="nav-text">#Next内置标签[2]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本居中引用"><span class="nav-number">2.1.</span> <span class="nav-text">#文本居中引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔记框note"><span class="nav-number">2.2.</span> <span class="nav-text">#笔记框note</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo内置标签"><span class="nav-number">3.</span> <span class="nav-text">#Hexo内置标签[3]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入图片"><span class="nav-number">3.1.</span> <span class="nav-text">#插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用自己的文章"><span class="nav-number">3.2.</span> <span class="nav-text">#引用自己的文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-renderer-markdown-it插件"><span class="nav-number">4.</span> <span class="nav-text">#hexo-renderer-markdown-it插件[4]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">4.1.</span> <span class="nav-text">#安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-config-yml"><span class="nav-number">4.2.</span> <span class="nav-text">#配置_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#永久链接"><span class="nav-number">4.3.</span> <span class="nav-text">#永久链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加注脚"><span class="nav-number">4.4.</span> <span class="nav-text">#添加注脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bug-内置more标签失效"><span class="nav-number">4.5.</span> <span class="nav-text">#[BUG]内置more标签失效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">#参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loostudy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
