@@ -9,5 +9,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://qf2017.cn/sitemap.xml
-Sitemap: http://qf2017.cn/baidusitemap.xml
+Sitemap: https://qf2017.cn/sitemap.xml
+Sitemap: https://qf2017.cn/baidusitemap.xml
