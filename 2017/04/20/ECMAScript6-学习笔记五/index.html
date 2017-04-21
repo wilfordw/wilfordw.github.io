@@ -95,7 +95,7 @@
 <meta property="og:url" content="https://qf2017.cn/2017/04/20/ECMAScript6-学习笔记五/index.html">
 <meta property="og:site_name" content="LOOSTUDY">
 <meta property="og:description" content="#Promise #基本形态 12345678910//基本建议形态new Promise(function (resolve, reject) &amp;#123;  if(...)&amp;#123;// 成功    resolve(&quot;success&quot;)  &amp;#125;else&amp;#123;    reject(&quot;fail&quot;)  &amp;#125;&amp;#125;).then(result =&amp;gt; console">
-<meta property="og:updated_time" content="2017-04-20T13:06:33.000Z">
+<meta property="og:updated_time" content="2017-04-20T13:12:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6 学习笔记五">
 <meta name="twitter:description" content="#Promise #基本形态 12345678910//基本建议形态new Promise(function (resolve, reject) &amp;#123;  if(...)&amp;#123;// 成功    resolve(&quot;success&quot;)  &amp;#125;else&amp;#123;    reject(&quot;fail&quot;)  &amp;#125;&amp;#125;).then(result =&amp;gt; console">
@@ -440,6 +440,9 @@
 <p>下面是一个 Generator 函数，用于依次读取两个文件。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>)</div><div class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>)</div><div class="line">  <span class="built_in">console</span>.log(f1.toString())</div><div class="line">  <span class="built_in">console</span>.log(f2.toString())</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// co 模块可以让你不用编写 Generator 函数的执行器。</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>)</div><div class="line">co(gen).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Generator 函数执行完成'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
+<ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6 入门</a></li>
+</ul>
 
       
     </div>
@@ -481,6 +484,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/21/ECMAScript6-学习笔记六/" rel="next" title="ECMAScript6 学习笔记六">
+                <i class="fa fa-chevron-left"></i> ECMAScript6 学习笔记六
+              </a>
             
           </div>
 
@@ -564,7 +571,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -95,7 +95,7 @@
 <meta property="og:url" content="https://qf2017.cn/2017/04/20/ECMAScript6-学习笔记四/index.html">
 <meta property="og:site_name" content="LOOSTUDY">
 <meta property="og:description" content="#Proxy Proxy可以修改Reflect对象的所有方法，它们的方法是一一对应的，Proxy对象可以方便地调用对应的Reflect方法，完成默认行为 123456var obj  = new Proxy(&amp;#123;&amp;#125;,&amp;#123;  get: function (target, key, receiver) &amp;#123;    console.log(`getting $&amp;#123">
-<meta property="og:updated_time" content="2017-04-20T11:04:37.000Z">
+<meta property="og:updated_time" content="2017-04-21T07:54:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6 学习笔记四">
 <meta name="twitter:description" content="#Proxy Proxy可以修改Reflect对象的所有方法，它们的方法是一一对应的，Proxy对象可以方便地调用对应的Reflect方法，完成默认行为 123456var obj  = new Proxy(&amp;#123;&amp;#125;,&amp;#123;  get: function (target, key, receiver) &amp;#123;    console.log(`getting $&amp;#123">
@@ -420,6 +420,9 @@
 <h3 id="proxy实现观察者模式"><a class="header-anchor" href="#proxy实现观察者模式">#</a>Proxy实现观察者模式</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> queuedObservers = <span class="keyword">new</span> <span class="built_in">Set</span>()</div><div class="line"></div><div class="line"><span class="keyword">const</span> observe = <span class="function"><span class="params">fn</span> =&gt;</span> queuedObservers.add(fn)</div><div class="line"><span class="keyword">const</span> obervable = <span class="function"><span class="params">obj</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;set&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">set</span>(<span class="params">target, key, value, receiver</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> result = <span class="built_in">Reflect</span>.set(target, key, value, receiver)</div><div class="line">  queuedObservers.forEach(<span class="function"><span class="params">observer</span> =&gt;</span> observer())</div><div class="line">  <span class="keyword">return</span> result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
+<ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6 入门</a></li>
+</ul>
 
       
     </div>
@@ -548,7 +551,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
