@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="#ES6模块 #export 123456export var firstName = &apos;Micheal&apos;export var lastName = &apos;Jackson&apos;export var year = 1958// 等同于export &amp;#123;firstName, lastName, year&amp;#125;export default firstName #import 1234import">
+<meta name="description" content="#数值 #二进制和十六进制 1234560b111110111 === 503 //true   二进制0o767 === 503 // true 十六进制Number(&apos;0b111&apos;) // 7Number(&apos;0o10&apos;) // 8 #isFinite和isNaN 123456Number.isFinite(Infinity) // falseNumber.isFinite(15) // tru">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ECMAScript6 学习笔记七">
-<meta property="og:url" content="https://qf2017.cn/2017/04/21/ECMAScript6-学习笔记七/index.html">
+<meta property="og:title" content="ECMAScript6 学习笔记 二">
+<meta property="og:url" content="https://qf2017.cn/2017/04/19/ECMAScript6-学习笔记二/index.html">
 <meta property="og:site_name" content="LOOSTUDY">
-<meta property="og:description" content="#ES6模块 #export 123456export var firstName = &apos;Micheal&apos;export var lastName = &apos;Jackson&apos;export var year = 1958// 等同于export &amp;#123;firstName, lastName, year&amp;#125;export default firstName #import 1234import">
-<meta property="og:updated_time" content="2017-04-21T09:33:07.000Z">
+<meta property="og:description" content="#数值 #二进制和十六进制 1234560b111110111 === 503 //true   二进制0o767 === 503 // true 十六进制Number(&apos;0b111&apos;) // 7Number(&apos;0o10&apos;) // 8 #isFinite和isNaN 123456Number.isFinite(Infinity) // falseNumber.isFinite(15) // tru">
+<meta property="og:updated_time" content="2017-04-21T11:43:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECMAScript6 学习笔记七">
-<meta name="twitter:description" content="#ES6模块 #export 123456export var firstName = &apos;Micheal&apos;export var lastName = &apos;Jackson&apos;export var year = 1958// 等同于export &amp;#123;firstName, lastName, year&amp;#125;export default firstName #import 1234import">
+<meta name="twitter:title" content="ECMAScript6 学习笔记 二">
+<meta name="twitter:description" content="#数值 #二进制和十六进制 1234560b111110111 === 503 //true   二进制0o767 === 503 // true 十六进制Number(&apos;0b111&apos;) // 7Number(&apos;0o10&apos;) // 8 #isFinite和isNaN 123456Number.isFinite(Infinity) // falseNumber.isFinite(15) // tru">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://qf2017.cn/2017/04/21/ECMAScript6-学习笔记七/"/>
+  <link rel="canonical" href="https://qf2017.cn/2017/04/19/ECMAScript6-学习笔记二/"/>
 
 
 
 
 
-  <title> ECMAScript6 学习笔记七 | LOOSTUDY </title>
+  <title> ECMAScript6 学习笔记 二 | LOOSTUDY </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +295,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qf2017.cn/2017/04/21/ECMAScript6-学习笔记七/">
+    <link itemprop="mainEntityOfPage" href="https://qf2017.cn/2017/04/19/ECMAScript6-学习笔记二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="loostudy">
@@ -317,7 +317,7 @@
             
               
               
-                ECMAScript6 学习笔记七
+                ECMAScript6 学习笔记 二
               
             
           </h1>
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-21T15:34:43+08:00">
-                2017-04-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T10:20:57+08:00">
+                2017-04-19
               </time>
             
 
@@ -375,7 +375,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/21/ECMAScript6-学习笔记七/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/04/19/ECMAScript6-学习笔记二/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -408,17 +408,36 @@
 
 
       
-        <h2 id="es6模块"><a class="header-anchor" href="#es6模块">#</a>ES6模块</h2>
-<h3 id="export"><a class="header-anchor" href="#export">#</a>export</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Micheal'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> firstName</div></pre></td></tr></table></figure>
-<h3 id="import"><a class="header-anchor" href="#import">#</a>import</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; name &#125; <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"><span class="keyword">import</span> &#123; name <span class="keyword">as</span> newName &#125; <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">'module'</span> <span class="comment">//接收export default</span></div></pre></td></tr></table></figure>
-<h3 id="复合import-export"><a class="header-anchor" href="#复合import-export">#</a>复合import export</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> &#123; name, name2 &#125; <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"><span class="keyword">export</span> &#123; <span class="keyword">default</span> &#125; <span class="keyword">from</span> <span class="string">'module'</span> <span class="comment">//默认接口</span></div></pre></td></tr></table></figure>
-<h3 id="替代node的require"><a class="header-anchor" href="#替代node的require">#</a>替代Node的require</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span>(package) </div><div class="line"><span class="comment">// 替代</span></div><div class="line"><span class="built_in">require</span>(package)</div><div class="line"></div><div class="line"><span class="comment">//import() 加载模块成功后会作为一个对象，当做then方法的参数。可以使用对象解构语法，获取输出接口</span></div><div class="line"><span class="keyword">import</span>(<span class="string">'module'</span>)</div><div class="line">.then(<span class="function">(<span class="params">&#123;export1, export2&#125;</span>) =&gt;</span> &#123;&#125;)</div></pre></td></tr></table></figure>
-<h2 id="浏览器使用es6模块"><a class="header-anchor" href="#浏览器使用es6模块">#</a>浏览器使用ES6模块</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"module"</span> src=<span class="string">"foo.js"</span>&gt;&lt;/script&gt; <span class="comment">//渲染完成再执行</span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"module"</span> src=<span class="string">"foo.js"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;  <span class="comment">//加载完成立刻执行</span></div><div class="line"></div><div class="line"><span class="comment">// 利用顶层的this等于undefined这个语法点，可以侦测当前代码是否在ES6模块中</span></div><div class="line"><span class="keyword">const</span> isNotModuleScript = <span class="keyword">this</span> !== <span class="literal">undefined</span></div></pre></td></tr></table></figure>
+        <h2 id="数值"><a class="header-anchor" href="#数值">#</a>数值</h2>
+<h3 id="二进制和十六进制"><a class="header-anchor" href="#二进制和十六进制">#</a>二进制和十六进制</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">0b111110111</span> === <span class="number">503</span> <span class="comment">//true   二进制</span></div><div class="line"><span class="number">0o767</span> === <span class="number">503</span> <span class="comment">// true 十六进制</span></div><div class="line"></div><div class="line"><span class="built_in">Number</span>(<span class="string">'0b111'</span>) <span class="comment">// 7</span></div><div class="line"><span class="built_in">Number</span>(<span class="string">'0o10'</span>) <span class="comment">// 8</span></div></pre></td></tr></table></figure>
+<h3 id="isfinite和isnan"><a class="header-anchor" href="#isfinite和isnan">#</a>isFinite和isNaN</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Number</span>.isFinite(<span class="literal">Infinity</span>) <span class="comment">// false</span></div><div class="line"><span class="built_in">Number</span>.isFinite(<span class="number">15</span>) <span class="comment">// true</span></div><div class="line"><span class="built_in">Number</span>.isFinite(<span class="string">'15'</span>) <span class="comment">//false</span></div><div class="line"></div><div class="line"><span class="built_in">Number</span>.isNaN(<span class="literal">NaN</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h3 id="极小常量epsilon"><a class="header-anchor" href="#极小常量epsilon">#</a>极小常量EPSILON</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Number</span>.EPSILON <span class="comment">// 2.220446049250313e-16</span></div></pre></td></tr></table></figure>
+<h3 id="max-safe-integer和min-safe-integer"><a class="header-anchor" href="#max-safe-integer和min-safe-integer">#</a>MAX_SAFE_INTEGER和MIN_SAFE_INTEGER</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Number</span>.MAX_SAFE_INTEGER === <span class="built_in">Math</span>.pow(<span class="number">2.</span> <span class="number">53</span>) - <span class="number">1</span> <span class="comment">// true</span></div><div class="line"><span class="built_in">Number</span>.MIN_SAFE_INTEGER === -<span class="built_in">Number</span>.MAX_SAFE_INTEGER</div></pre></td></tr></table></figure>
+<h3 id="去除小数部分"><a class="header-anchor" href="#去除小数部分">#</a>去除小数部分</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Math</span>.trunc(<span class="number">4.1</span>) <span class="comment">// 4</span></div></pre></td></tr></table></figure>
+<h3 id="立方根"><a class="header-anchor" href="#立方根">#</a>立方根</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Math</span>.cbrt(<span class="number">-1</span>) <span class="comment">// -1</span></div><div class="line"><span class="built_in">Math</span>.cbrt(<span class="string">'8'</span>) <span class="comment">// 2</span></div></pre></td></tr></table></figure>
+<h3 id="大位数乘法"><a class="header-anchor" href="#大位数乘法">#</a>大位数乘法</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(<span class="number">0x7fffffff</span> * <span class="number">0x7fffffff</span>) | <span class="number">0</span> <span class="comment">// 0</span></div><div class="line"><span class="built_in">Math</span>.imul(<span class="number">0x7fffffff</span>, <span class="number">0x7fffffff</span>) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<h3 id="平方和的平方根"><a class="header-anchor" href="#平方和的平方根">#</a>平方和的平方根</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">Math</span>.hypot(<span class="number">3</span>, <span class="number">4</span>) <span class="comment">// 5</span></div><div class="line"></div><div class="line"><span class="built_in">Math</span>.hypot(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment">// 7.07106781186546755</span></div></pre></td></tr></table></figure>
+<h2 id="数组"><a class="header-anchor" href="#数组">#</a>数组</h2>
+<h3 id="array-from"><a class="header-anchor" href="#array-from">#</a>Array.from()</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arrayLike = &#123;</div><div class="line">  <span class="string">'0'</span>: <span class="string">'a'</span>,</div><div class="line">  <span class="string">'1'</span>: <span class="string">'b'</span>,</div><div class="line">  <span class="string">'2'</span>: <span class="string">'c'</span>,</div><div class="line">  <span class="attr">length</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ES5的写法</span></div><div class="line"><span class="keyword">var</span> arr1 = [].slice.call(arrayLike); <span class="comment">// ['a', 'b', 'c']</span></div><div class="line"></div><div class="line"><span class="comment">// ES6的写法</span></div><div class="line"><span class="keyword">var</span> arr2 = <span class="built_in">Array</span>.from(arrayLike); <span class="comment">// ['a', 'b', 'c']</span></div><div class="line"></div><div class="line"><span class="comment">// Array.from的第二个参数</span></div><div class="line"><span class="built_in">Array</span>.from(arrayLike, x =&gt; x * x)</div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="built_in">Array</span>.from(arrayLike).map(<span class="function"><span class="params">x</span> =&gt;</span> x * x)</div><div class="line"></div><div class="line"><span class="comment">// 应用</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.from([<span class="number">1</span>, , <span class="number">2</span>, , <span class="number">3</span>], (n) =&gt; n || <span class="number">0</span>) <span class="comment">// [1, 0, 2, 0, 3]</span></div><div class="line"></div><div class="line"><span class="comment">// map函数里用到this关键字，可以传入Array.from的第三个参数， 用来绑定this</span></div></pre></td></tr></table></figure>
+<h3 id="find"><a class="header-anchor" href="#find">#</a>find</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[1, 4, -5, 10].find((n) =&gt; n &lt; 0) // -5</div><div class="line"></div><div class="line">// value 当前值 index 位置 arr 原数组</div><div class="line">[1, 5, 10, 15].find(function(value, index, arr) &#123;</div><div class="line">  return value &gt; 9</div><div class="line">&#125;) //10</div></pre></td></tr></table></figure>
+<h3 id="fill"><a class="header-anchor" href="#fill">#</a>fill</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].fill(<span class="number">7</span>) <span class="comment">// [7, 7, 7]</span></div><div class="line"></div><div class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>).fill(<span class="number">7</span>) <span class="comment">// [7, 7, 7]</span></div><div class="line"></div><div class="line"><span class="comment">// 第二个参数 起始位置 第三个参数 结束位置</span></div><div class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].fill(<span class="number">7</span>, <span class="number">1</span>, <span class="number">2</span>) <span class="comment">// ['a', 7, 'c']</span></div></pre></td></tr></table></figure>
+<h3 id="entries-keys-和values"><a class="header-anchor" href="#entries-keys-和values">#</a>entries(), keys()和values()</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].keys()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> elem <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].values()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(elem)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 'a'</span></div><div class="line"><span class="comment">// 'b'</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [index, elem] <span class="keyword">of</span> [<span class="string">'a'</span>, <span class="string">'b'</span>].entries()) &#123;</div><div class="line">  <span class="built_in">console</span>.log(index, elem)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 0 "a"</span></div><div class="line"><span class="comment">// 1 "b"</span></div></pre></td></tr></table></figure>
+<h3 id="includes"><a class="header-anchor" href="#includes">#</a>includes()</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">2</span>) <span class="comment">//true</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="literal">NaN</span>].includes(<span class="literal">NaN</span>) <span class="comment">//true</span></div><div class="line"></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">3</span>, <span class="number">3</span>) <span class="comment">//false</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">3</span>, <span class="number">-1</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h3 id="in-判断某位是否有值"><a class="header-anchor" href="#in-判断某位是否有值">#</a>in 判断某位是否有值</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">0</span> <span class="keyword">in</span> [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>] <span class="comment">//true</span></div><div class="line"><span class="number">0</span> <span class="keyword">in</span> [, , ,] <span class="comment">// false</span></div></pre></td></tr></table></figure>
 <h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
 <ul>
 <li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6 入门</a></li>
@@ -465,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/21/JavaScript-数组增删改/" rel="next" title="JavaScript 数组增删改">
-                <i class="fa fa-chevron-left"></i> JavaScript 数组增删改
+              <a href="/2017/04/19/ECMAScript6-学习笔记三/" rel="next" title="ECMAScript6 学习笔记三">
+                <i class="fa fa-chevron-left"></i> ECMAScript6 学习笔记三
               </a>
             
           </div>
@@ -475,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/21/ECMAScript6-学习笔记六/" rel="prev" title="ECMAScript6 学习笔记六">
-                ECMAScript6 学习笔记六 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/17/ECMAScript6-学习笔记一/" rel="prev" title="ECMAScript6 学习笔记 一">
+                ECMAScript6 学习笔记 一 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#es6模块"><span class="nav-number">1.</span> <span class="nav-text">#ES6模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#export"><span class="nav-number">1.1.</span> <span class="nav-text">#export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import"><span class="nav-number">1.2.</span> <span class="nav-text">#import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合import-export"><span class="nav-number">1.3.</span> <span class="nav-text">#复合import export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替代node的require"><span class="nav-number">1.4.</span> <span class="nav-text">#替代Node的require</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器使用es6模块"><span class="nav-number">2.</span> <span class="nav-text">#浏览器使用ES6模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">#参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数值"><span class="nav-number">1.</span> <span class="nav-text">#数值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制和十六进制"><span class="nav-number">1.1.</span> <span class="nav-text">#二进制和十六进制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isfinite和isnan"><span class="nav-number">1.2.</span> <span class="nav-text">#isFinite和isNaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极小常量epsilon"><span class="nav-number">1.3.</span> <span class="nav-text">#极小常量EPSILON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-safe-integer和min-safe-integer"><span class="nav-number">1.4.</span> <span class="nav-text">#MAX_SAFE_INTEGER和MIN_SAFE_INTEGER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除小数部分"><span class="nav-number">1.5.</span> <span class="nav-text">#去除小数部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立方根"><span class="nav-number">1.6.</span> <span class="nav-text">#立方根</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大位数乘法"><span class="nav-number">1.7.</span> <span class="nav-text">#大位数乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平方和的平方根"><span class="nav-number">1.8.</span> <span class="nav-text">#平方和的平方根</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">#数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array-from"><span class="nav-number">2.1.</span> <span class="nav-text">#Array.from()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">2.2.</span> <span class="nav-text">#find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fill"><span class="nav-number">2.3.</span> <span class="nav-text">#fill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entries-keys-和values"><span class="nav-number">2.4.</span> <span class="nav-text">#entries(), keys()和values()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#includes"><span class="nav-number">2.5.</span> <span class="nav-text">#includes()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in-判断某位是否有值"><span class="nav-number">2.6.</span> <span class="nav-text">#in 判断某位是否有值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">#参考资料</span></a></li></ol></div>
             
 
           </div>
