@@ -1,0 +1,1041 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="HHghh7KmFa" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="项目地址 在线效果 #为什么要开发 最近在练习快捷键，找到ShortcutFoo，进行练习，发现体验糟糕透了  国内访问卡顿厉害，用SS都没用 前2章节免费，之后所有章节都要收费，包月需要8刀 没有数据分析，只有成就(有毛用)，根据数据进行专项训练很重要 觉得章节不合理，或者与你自己惯用快捷键不符不能进行调整，为了过关完下一章，只能硬着头皮练习个别错误的快捷键(硬伤) 本身网站技术含量不高，与收费">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 实战 -- LooStudyFoo">
+<meta property="og:url" content="https://qf2017.cn/2017/05/03/Vue-实战-LooStudyFoo/index.html">
+<meta property="og:site_name" content="LOOSTUDY">
+<meta property="og:description" content="项目地址 在线效果 #为什么要开发 最近在练习快捷键，找到ShortcutFoo，进行练习，发现体验糟糕透了  国内访问卡顿厉害，用SS都没用 前2章节免费，之后所有章节都要收费，包月需要8刀 没有数据分析，只有成就(有毛用)，根据数据进行专项训练很重要 觉得章节不合理，或者与你自己惯用快捷键不符不能进行调整，为了过关完下一章，只能硬着头皮练习个别错误的快捷键(硬伤) 本身网站技术含量不高，与收费">
+<meta property="og:updated_time" content="2017-05-03T14:31:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue 实战 -- LooStudyFoo">
+<meta name="twitter:description" content="项目地址 在线效果 #为什么要开发 最近在练习快捷键，找到ShortcutFoo，进行练习，发现体验糟糕透了  国内访问卡顿厉害，用SS都没用 前2章节免费，之后所有章节都要收费，包月需要8刀 没有数据分析，只有成就(有毛用)，根据数据进行专项训练很重要 觉得章节不合理，或者与你自己惯用快捷键不符不能进行调整，为了过关完下一章，只能硬着头皮练习个别错误的快捷键(硬伤) 本身网站技术含量不高，与收费">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qf2017.cn/2017/05/03/Vue-实战-LooStudyFoo/"/>
+
+
+
+
+
+  <title> Vue 实战 -- LooStudyFoo | LOOSTUDY </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LOOSTUDY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">绽放时厚积薄发 等待时心如止水</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qf2017.cn/2017/05/03/Vue-实战-LooStudyFoo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loostudy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LOOSTUDY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+              
+                Vue 实战 -- LooStudyFoo
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T22:28:26+08:00">
+                2017-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+              <span class="post-category" >
+              
+                <span class="post-meta-divider">|</span>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-folder-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">分类于</span>
+                
+                
+                  <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                    <a href="/categories/javascript/" itemprop="url" rel="index">
+                      <span itemprop="name">javascript</span>
+                    </a>
+                  </span>
+
+                  
+                  
+                
+              </span>
+            
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/05/03/Vue-实战-LooStudyFoo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+
+      
+        <p><a href="https://coding.net/u/loostudy/p/vue-web-native-server/git/tree/master/vue-demo" target="_blank" rel="external">项目地址</a><br>
+<a href="http://www.happygod.cn/" target="_blank" rel="external">在线效果</a></p>
+<h3 id="为什么要开发"><a class="header-anchor" href="#为什么要开发">#</a>为什么要开发</h3>
+<p>最近在练习快捷键，找到<a href="https://www.shortcutfoo.com/app" target="_blank" rel="external">ShortcutFoo</a>，进行练习，发现体验糟糕透了</p>
+<ol>
+<li>国内访问卡顿厉害，用SS都没用</li>
+<li>前2章节免费，之后所有章节都要收费，包月需要8刀</li>
+<li>没有数据分析，只有成就(有毛用)，根据数据进行专项训练很重要</li>
+<li>觉得章节不合理，或者与你自己惯用快捷键不符不能进行调整，为了过关完下一章，只能硬着头皮练习个别错误的快捷键(硬伤)</li>
+<li>本身网站技术含量不高，与收费不成正比</li>
+<li>网站本身设置的章节内容是可以查看的，只是没法操作练习</li>
+<li>找不到其他网站可以代替它</li>
+</ol>
+<p>综上所述，由于最近正好在学vue，决定用vue做一个简单可用的快捷键训练工具，章节从shortcutfoo获取，根据喜好定制一些数据采集与现实。</p>
+<h3 id="需求"><a class="header-anchor" href="#需求">#</a>需求</h3>
+<ol>
+<li>可以选择课程和章节</li>
+<li>每章都有学习，练习，测验模式</li>
+<li>每日采集数据 =&gt; 每题 =&gt; { 最快答对用时 平均答对用时 最慢答对用时 成功率 练习次数 }</li>
+</ol>
+<h3 id="知识梳理"><a class="header-anchor" href="#知识梳理">#</a>知识梳理</h3>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-<span class="ruby"> Vue</span></div><div class="line">  -<span class="ruby"> script</span></div><div class="line">    -<span class="ruby"> data</span></div><div class="line">    -<span class="ruby"> props</span></div><div class="line">    -<span class="ruby"> computed</span></div><div class="line">    -<span class="ruby"> method</span></div><div class="line">      -<span class="ruby"> $emit</span></div><div class="line">      -<span class="ruby"> $ref</span></div><div class="line">    -<span class="ruby"> components</span></div><div class="line">    -<span class="ruby"> mounted</span></div><div class="line">  -<span class="ruby"> template</span></div><div class="line">    -<span class="ruby"> v-<span class="keyword">if</span></span></div><div class="line">    -<span class="ruby"> v-<span class="keyword">for</span></span></div><div class="line">    -<span class="ruby"> ref</span></div><div class="line">    -<span class="ruby"> @click.native</span></div><div class="line">    -<span class="ruby"> @keydown.prevent *</span></div><div class="line">    -<span class="ruby"> transition</span></div><div class="line"></div><div class="line">-<span class="ruby"> JavaScript</span></div><div class="line">  -<span class="ruby"> event.keCode *</span></div><div class="line">    -<span class="ruby"> e.ctrlKey</span></div><div class="line">    -<span class="ruby"> e.shiftKey</span></div><div class="line">    -<span class="ruby"> e.altKey</span></div><div class="line">    -<span class="ruby"> e.metaKey</span></div><div class="line">  -<span class="ruby"> Math</span></div><div class="line">    -<span class="ruby"> floor</span></div><div class="line">    -<span class="ruby"> round</span></div><div class="line">    -<span class="ruby"> random</span></div><div class="line">  -<span class="ruby"> Date</span></div><div class="line">    -<span class="ruby"> getTime</span></div><div class="line">    -<span class="ruby"> getFullYear</span></div><div class="line">    -<span class="ruby"> getMonth</span></div><div class="line">    -<span class="ruby"> getDate</span></div><div class="line">  -<span class="ruby"> <span class="keyword">for</span> ... <span class="keyword">in</span></span></div><div class="line">  -<span class="ruby"> input.focus() *</span></div><div class="line">  -<span class="ruby"> blur *</span></div><div class="line">  -<span class="ruby"> localStorage</span></div><div class="line"></div><div class="line">-<span class="ruby"> iView</span></div><div class="line">  -<span class="ruby"> Grid</span></div><div class="line">    -<span class="ruby"> Row</span></div><div class="line">      -<span class="ruby"> Col</span></div><div class="line">        -<span class="ruby"> span</span></div><div class="line">  -<span class="ruby"> Card</span></div><div class="line">  -<span class="ruby"> Table</span></div><div class="line">    -<span class="ruby"> <span class="symbol">:columns</span></span></div><div class="line">      -<span class="ruby"> title</span></div><div class="line">      -<span class="ruby"> key</span></div><div class="line">      -<span class="ruby"> width</span></div><div class="line">      -<span class="ruby"> sortable</span></div><div class="line">      -<span class="ruby"> fixed</span></div><div class="line">      -<span class="ruby"> align</span></div><div class="line">      -<span class="ruby"> render</span></div><div class="line">    -<span class="ruby"> <span class="symbol">:data</span></span></div><div class="line">      -<span class="ruby"> cellClassName</span></div><div class="line">    -<span class="ruby"> height</span></div><div class="line">  -<span class="ruby"> Menu</span></div><div class="line">    -<span class="ruby"> mode</span></div><div class="line">    -<span class="ruby"> active-name</span></div><div class="line">    -<span class="ruby"> @on-select</span></div><div class="line">    -<span class="ruby"> Menu-item</span></div><div class="line">      -<span class="ruby"> name</span></div></pre></td></tr></table></figure>
+<h3 id="深入实践"><a class="header-anchor" href="#深入实践">#</a>深入实践</h3>
+<ol>
+<li>不用vue-cli尝试搭建工程项目</li>
+<li>加入vuex提供全局状态维护</li>
+<li>vue-router使用</li>
+<li>探究如何使用完整es6语法功能</li>
+</ol>
+<h3 id="待开发功能"><a class="header-anchor" href="#待开发功能">#</a>待开发功能</h3>
+<ol>
+<li>多元化数据分析，每日总表，单题Chart曲线</li>
+<li>国际化规范</li>
+<li>测验模式，随机20题，2秒 5秒 8秒 3挡时间选择 测试通过给出成绩，测试也练习模式分开统计</li>
+<li>修改配置文件格式，key的值作为object的key</li>
+</ol>
+<h3 id="开发日志"><a class="header-anchor" href="#开发日志">#</a>开发日志</h3>
+<h4 id="2017-4-26"><a class="header-anchor" href="#2017-4-26">#</a>2017/4/26</h4>
+<ol>
+<li>确定配置文件结构</li>
+<li>题目章节导航</li>
+<li>章节练习模式实现</li>
+</ol>
+<h4 id="2017-4-27"><a class="header-anchor" href="#2017-4-27">#</a>2017/4/27</h4>
+<ol>
+<li>使用iView优化UI排版</li>
+<li>组件化代码</li>
+<li>点击开始焦点绑定input</li>
+</ol>
+<h4 id="2017-4-28"><a class="header-anchor" href="#2017-4-28">#</a>2017/4/28</h4>
+<ol>
+<li>添加简单动画</li>
+<li>添加学习模式</li>
+<li>练习模式和测验模式包含之前章节</li>
+<li>显示每次完成快捷键的时间</li>
+<li>配置文件增加key值，每个题key唯一</li>
+<li>按日期记录每天的练习成绩，维护到localStorage</li>
+</ol>
+<h4 id="2017-4-29"><a class="header-anchor" href="#2017-4-29">#</a>2017/4/29</h4>
+<ol>
+<li>添加数据分析总表</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/03/Template-Vue-使用笔记/" rel="prev" title="Template Vue 使用笔记">
+                Template Vue 使用笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg"
+               alt="loostudy" />
+          <p class="site-author-name" itemprop="name">loostudy</p>
+           
+              <p class="site-description motion-element" itemprop="description">一个程序员的技术分享</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wilfordw/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/loostudy" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1471779367/fans?topnav=1&wvr=6&mod=message&need_filter=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wang-ji-68-89/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/152848053/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/loostudy" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://git.oschina.net/_billwang" target="_blank" title="oschina">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  oschina
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要开发"><span class="nav-number">1.</span> <span class="nav-text">#为什么要开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">2.</span> <span class="nav-text">#需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识梳理"><span class="nav-number">3.</span> <span class="nav-text">#知识梳理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入实践"><span class="nav-number">4.</span> <span class="nav-text">#深入实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待开发功能"><span class="nav-number">5.</span> <span class="nav-text">#待开发功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发日志"><span class="nav-number">6.</span> <span class="nav-text">#开发日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2017-4-26"><span class="nav-number">6.1.</span> <span class="nav-text">#2017/4/26</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2017-4-27"><span class="nav-number">6.2.</span> <span class="nav-text">#2017/4/27</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2017-4-28"><span class="nav-number">6.3.</span> <span class="nav-text">#2017/4/28</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2017-4-29"><span class="nav-number">6.4.</span> <span class="nav-text">#2017/4/29</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loostudy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "f2b670240e274ca6a58aa37090f8c028",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
