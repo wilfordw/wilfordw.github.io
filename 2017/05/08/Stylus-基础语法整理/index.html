@@ -1,0 +1,834 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="HHghh7KmFa" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#@import 123456&amp;lt;!-- 导入文件夹内全部 --&amp;gt;@import &apos;product/*&apos;&amp;lt;!-- 代码块内导入 --&amp;gt;.foo  @import &apos;bar.styl&apos; #支持嵌套，分好、冒号、大括号可选 12345678910111213141516171819&amp;lt;!-- stylus --&amp;gt;body  font 14px/1.5 Helvetica">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stylus 基础语法整理">
+<meta property="og:url" content="https://qf2017.cn/2017/05/08/Stylus-基础语法整理/index.html">
+<meta property="og:site_name" content="LOOSTUDY">
+<meta property="og:description" content="#@import 123456&amp;lt;!-- 导入文件夹内全部 --&amp;gt;@import &apos;product/*&apos;&amp;lt;!-- 代码块内导入 --&amp;gt;.foo  @import &apos;bar.styl&apos; #支持嵌套，分好、冒号、大括号可选 12345678910111213141516171819&amp;lt;!-- stylus --&amp;gt;body  font 14px/1.5 Helvetica">
+<meta property="og:updated_time" content="2017-05-08T06:58:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stylus 基础语法整理">
+<meta name="twitter:description" content="#@import 123456&amp;lt;!-- 导入文件夹内全部 --&amp;gt;@import &apos;product/*&apos;&amp;lt;!-- 代码块内导入 --&amp;gt;.foo  @import &apos;bar.styl&apos; #支持嵌套，分好、冒号、大括号可选 12345678910111213141516171819&amp;lt;!-- stylus --&amp;gt;body  font 14px/1.5 Helvetica">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qf2017.cn/2017/05/08/Stylus-基础语法整理/"/>
+
+
+
+
+
+  <title> Stylus 基础语法整理 | LOOSTUDY </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LOOSTUDY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">绽放时厚积薄发 等待时心如止水</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qf2017.cn/2017/05/08/Stylus-基础语法整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loostudy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LOOSTUDY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+              
+                Stylus 基础语法整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T14:53:01+08:00">
+                2017-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            
+              <span class="post-category" >
+              
+                <span class="post-meta-divider">|</span>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-folder-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">分类于</span>
+                
+                
+                  <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                    <a href="/categories/css/" itemprop="url" rel="index">
+                      <span itemprop="name">css</span>
+                    </a>
+                  </span>
+
+                  
+                  
+                
+              </span>
+            
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+
+      
+        <h2 id="import"><a class="header-anchor" href="#import">#</a>@import</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span> 导入文件夹内全部 <span class="selector-tag">--</span>&gt;</div><div class="line">@<span class="keyword">import</span> <span class="string">'product/*'</span></div><div class="line"></div><div class="line">&lt;!-- 代码块内导入 --&gt;</div><div class="line">.foo</div><div class="line">  @import <span class="string">'bar.styl'</span></div></pre></td></tr></table></figure>
+<h2 id="支持嵌套-分好-冒号-大括号可选"><a class="header-anchor" href="#支持嵌套-分好-冒号-大括号可选">#</a>支持嵌套，分好、冒号、大括号可选</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!-- stylus --&gt;</div><div class="line">body</div><div class="line">  font 14px/1.5 Helvetica, arial, sans-serif</div><div class="line">  button</div><div class="line">  button.button</div><div class="line">  input[type='button']</div><div class="line">  input[type='submit']</div><div class="line">    border-radius 5px</div><div class="line"></div><div class="line">&lt;!-- css --&gt;</div><div class="line">body &#123;</div><div class="line">  font: 14px/1.5 Helvetica, arial, sans-serif;</div><div class="line">&#125;</div><div class="line">body button,</div><div class="line">body button.button,</div><div class="line">body input[type='button'],</div><div class="line">body input[type='submit'] &#123;</div><div class="line">  border-radius: 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="父节点引用"><a class="header-anchor" href="#父节点引用">#</a>父节点引用 &amp;</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">stylus</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">ul</span></div><div class="line">  <span class="selector-tag">li</span> <span class="selector-tag">a</span></div><div class="line">    <span class="selector-tag">html</span><span class="selector-class">.ie</span> &amp;</div><div class="line">      <span class="selector-tag">padding</span>: 6<span class="selector-tag">px</span></div><div class="line">    &amp;<span class="selector-pseudo">:hover</span></div><div class="line">      <span class="selector-tag">color</span>: <span class="selector-tag">red</span></div><div class="line"></div><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">css</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">html</span><span class="selector-class">.ie</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">6px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="混合-function-val"><a class="header-anchor" href="#混合-function-val">#</a>混合 function([val])</h2>
+<p>参数可以用关键字也可以匿名 还可以设置默认值</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 关键字定义参数 --&gt;</div><div class="line">fade-out(color, amount = 50%)</div><div class="line">  color - rgba(0,0,0,amount)</div><div class="line"></div><div class="line">&lt;!-- 匿名参数 --&gt;</div><div class="line">border-radius()</div><div class="line">  -webkit-border-radius: arguments</div><div class="line">  -moz-border-radius: arguments</div><div class="line">  border-radius: arguments</div><div class="line"></div><div class="line">button &#123;</div><div class="line">  border-radius: 5px 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;!-- 高级应用 --&gt;</div><div class="line">-pos(type, args)</div><div class="line">  i = 0</div><div class="line">  position: unquote(type)</div><div class="line">  &#123;args[i]&#125;: args[i + 1] is a 'unit' ? args[i += 1] : 0</div><div class="line">  &#123;args[i += 1]&#125;: args[i + 1] is a 'unit' ? args[i += 1] : 0</div></pre></td></tr></table></figure>
+<h2 id="函数"><a class="header-anchor" href="#函数">#</a>函数</h2>
+<p>函数和混合定义方式一样，区别就是函数是返回值</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sum(nums...)</div><div class="line">  n = 0</div><div class="line">  n += num for num in nums</div><div class="line"></div><div class="line">body</div><div class="line">  foo: sum(1, 2, 3)</div></pre></td></tr></table></figure>
+<h2 id="变量"><a class="header-anchor" href="#变量">#</a>变量 =</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#prompt</div><div class="line">  width: w = 200px</div><div class="line">  margin-left: -(w / 2)</div></pre></td></tr></table></figure>
+<h2 id="获取块内属性值"><a class="header-anchor" href="#获取块内属性值">#</a>获取块内属性值 @</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#prompt</span></div><div class="line">  <span class="selector-tag">width</span>: 200<span class="selector-tag">px</span></div><div class="line">  <span class="selector-tag">margin-left</span>: <span class="selector-tag">-</span>(@<span class="keyword">width</span> / <span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h2 id="循环-for-in"><a class="header-anchor" href="#循环-for-in">#</a>循环 for in</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">table</div><div class="line">  for row in 1 2 3 4 5</div><div class="line">    tr:nth-child(&#123;row&#125;)</div><div class="line">      height: 10px * row</div></pre></td></tr></table></figure>
+<h2 id="运算符"><a class="header-anchor" href="#运算符">#</a>运算符</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;!-- stylus --&gt;</div><div class="line">body</div><div class="line">  foo: 5px + 10</div><div class="line">  foo: 2 ** 8</div><div class="line">  foo: 5px * 2</div><div class="line">  foo: !!''</div><div class="line">  foo: foo and bar and baz</div><div class="line">  foo: foo or bar or baz</div><div class="line">  foo: 1..5</div><div class="line">  foo: 1...5</div><div class="line">  foo: 'foo' is a 'string'</div><div class="line">  foo: (1 2 3) == (1 2 3)</div><div class="line">  foo: (1 2 3) == (1 2)</div><div class="line">  foo: ((one 1) (two 2)) == ((one 1) (two 2)) </div><div class="line">  foo: ((one 1) (two 2)) == ((one 1) (two)) </div><div class="line">  foo: ((one 1) (two 2))[0]</div><div class="line">  foo: 3 in (1 2 3 4)</div><div class="line"></div><div class="line">&lt;!-- css --&gt;</div><div class="line">body &#123;</div><div class="line">  foo: 15px;</div><div class="line">  foo: 256;</div><div class="line">  foo: 10px;</div><div class="line">  foo: false;</div><div class="line">  foo: baz;</div><div class="line">  foo: foo;</div><div class="line">  foo: 1 2 3 4 5;</div><div class="line">  foo: 1 2 3 4;</div><div class="line">  foo: true;</div><div class="line">  foo: true;</div><div class="line">  foo: false;</div><div class="line">  foo: true;</div><div class="line">  foo: false;</div><div class="line">  foo: one 1;</div><div class="line">  foo: true;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="格式化字符串"><a class="header-anchor" href="#格式化字符串">#</a>格式化字符串</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">body</div><div class="line">  foo: '%s / %s' % (5px 10px)</div><div class="line">  foo: 'MS:WeirdStuff(opacity=%s)' % 1</div><div class="line">  foo: unquote('MS:WeirdStuff(opacity=1)')</div></pre></td></tr></table></figure>
+<h2 id="颜色运算"><a class="header-anchor" href="#颜色运算">#</a>颜色运算</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">stylus</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">body</span></div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">white</span> <span class="selector-tag">-</span> 50%</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">black</span> + 50%</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-id">#eee</span> <span class="selector-tag">-</span> <span class="selector-id">#f00</span></div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-id">#eee</span> <span class="selector-tag">-</span> <span class="selector-tag">rgba</span>(<span class="selector-tag">black</span>,<span class="selector-class">.5</span>)</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-id">#cc0000</span> + 30<span class="selector-tag">deg</span></div><div class="line"></div><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">css</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">#808080</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">#808080</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">#0ee</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="built_in">rgba</span>(238,238,238,0.5);</div><div class="line">  <span class="attribute">foo</span>: <span class="number">#c60</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="内置函数"><a class="header-anchor" href="#内置函数">#</a>内置函数</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">stylus</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">body</span></div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">red</span>(<span class="selector-id">#fc0</span>)</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">green</span>(<span class="selector-id">#fc0</span>)</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">blue</span>(<span class="selector-id">#fc0</span>)</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">alpha</span>(<span class="selector-id">#fff</span>)</div><div class="line">  <span class="selector-tag">foo</span>: <span class="selector-tag">alpha</span>(<span class="selector-tag">rgba</span>(<span class="selector-id">#fff</span>, <span class="selector-class">.5</span>))</div><div class="line"></div><div class="line">&lt;!<span class="selector-tag">--</span> <span class="selector-tag">css</span> <span class="selector-tag">--</span>&gt;</div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">255</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">204</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">1</span>;</div><div class="line">  <span class="attribute">foo</span>: <span class="number">0.5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
+<ul>
+<li><a href="http://stylus-lang.com/try.html" target="_blank" rel="external">Stylus官网</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/03/Vue-实战-LooStudyFoo/" rel="prev" title="Vue 实战 -- LooStudyFoo">
+                Vue 实战 -- LooStudyFoo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://onx9sl8c2.bkt.clouddn.com/avatar.jpg"
+               alt="loostudy" />
+          <p class="site-author-name" itemprop="name">loostudy</p>
+           
+              <p class="site-description motion-element" itemprop="description">一个程序员的技术分享</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wilfordw/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/loostudy" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1471779367/fans?topnav=1&wvr=6&mod=message&need_filter=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wang-ji-68-89/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/152848053/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/loostudy" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://git.oschina.net/_billwang" target="_blank" title="oschina">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  oschina
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#import"><span class="nav-number">1.</span> <span class="nav-text">#@import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持嵌套-分好-冒号-大括号可选"><span class="nav-number">2.</span> <span class="nav-text">#支持嵌套，分好、冒号、大括号可选</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父节点引用"><span class="nav-number">3.</span> <span class="nav-text">#父节点引用 &</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合-function-val"><span class="nav-number">4.</span> <span class="nav-text">#混合 function([val])</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.</span> <span class="nav-text">#函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">6.</span> <span class="nav-text">#变量 =</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取块内属性值"><span class="nav-number">7.</span> <span class="nav-text">#获取块内属性值 @</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环-for-in"><span class="nav-number">8.</span> <span class="nav-text">#循环 for in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">9.</span> <span class="nav-text">#运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化字符串"><span class="nav-number">10.</span> <span class="nav-text">#格式化字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色运算"><span class="nav-number">11.</span> <span class="nav-text">#颜色运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数"><span class="nav-number">12.</span> <span class="nav-text">#内置函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">13.</span> <span class="nav-text">#参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loostudy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
