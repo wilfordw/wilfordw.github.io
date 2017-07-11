@@ -407,7 +407,7 @@
 <blockquote class="blockquote-center"><p>居中引用</p>
 </blockquote>
 <h3 id="笔记框note"><a class="header-anchor" href="#笔记框note">#</a>笔记框note</h3>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml">#可选class name &gt; default primary success info warning danger</span></div><div class="line"><span class="template-tag">&#123;% <span class="name">note</span> class_name %&#125;</span><span class="xml"> Content (md partial supported) </span><span class="template-tag">&#123;% <span class="name">endnote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#可选class name &gt; default primary success info warning danger</span></div><div class="line">&#123;%<span class="built_in"> note </span>class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</div></pre></td></tr></table></figure>
 <p>效果</p>
 <div class="note dafault"><p>default</p>
 </div>
@@ -422,7 +422,7 @@
 <h2 id="hexo内置标签"><a class="header-anchor" href="#hexo内置标签">#</a>Hexo内置标签<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></h2>
 <h3 id="插入图片"><a class="header-anchor" href="#插入图片">#</a>插入图片</h3>
 <p><code>Markdown</code>格式插入图片无法修改大小，而且Hexo不支持<code>Markdown</code>的title，需要修改带下和增加title需要使用内放标签</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% img [<span class="keyword">class</span> names] /path/to/<span class="built_in">image</span> [<span class="built_in">width</span>] [<span class="built_in">height</span>] [title <span class="built_in">text</span> [alt <span class="built_in">text</span>]] %&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;</div></pre></td></tr></table></figure>
 <h3 id="引用自己的文章"><a class="header-anchor" href="#引用自己的文章">#</a>引用自己的文章</h3>
 <figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">post_link</span> post文件名 别名 %&#125;</span><span class="xml"></span></div><div class="line">比如</div><div class="line"><span class="template-tag">&#123;% <span class="name">post_link</span> Hexo建站宝典 宝典！%&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
 <a href="/2017/04/05/Hexo建站宝典/" title="宝典！">宝典！</a>
@@ -500,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/05/Hexo图床/" rel="next" title="Hexo图床">
-                <i class="fa fa-chevron-left"></i> Hexo图床
+              <a href="/2017/04/05/Hexo建站宝典/" rel="next" title="Hexo建站宝典">
+                <i class="fa fa-chevron-left"></i> Hexo建站宝典
               </a>
             
           </div>
@@ -510,8 +510,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/05/Hexo建站宝典/" rel="prev" title="Hexo建站宝典">
-                Hexo建站宝典 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/05/Hexo图床/" rel="prev" title="Hexo图床">
+                Hexo图床 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -584,7 +584,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -595,7 +595,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -606,7 +606,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

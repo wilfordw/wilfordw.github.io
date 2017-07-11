@@ -369,7 +369,7 @@
 <p><code>vim /etc/nginx/conf.d/domain.conf</code></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="section">server</span> &#123;</div><div class="line">  <span class="attribute">listen</span>            <span class="number">80</span>;</div><div class="line">  <span class="attribute">server_name</span>       www.domain.cn;</div><div class="line">  <span class="attribute">access_log</span>        /var/log/nginx/domain.access.log;</div><div class="line"></div><div class="line">  <span class="attribute">location</span> / &#123;</div><div class="line">    <span class="comment"># 主入口为个人博客</span></div><div class="line">    <span class="attribute">root</span> /root/www/blog;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="attribute">location</span> /memei-admin/ &#123;</div><div class="line">    <span class="comment"># www.domain.cn/memei-admin/ 是我的vue项目入口</span></div><div class="line">    <span class="attribute">root</span>  /root/www;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="attribute">location</span> /static/ &#123;</div><div class="line">    <span class="comment"># /static 是vue项目的静态资源目录</span></div><div class="line">    <span class="comment"># 设置 /static 路径跳转到 /root/www/memei-admin</span></div><div class="line">    <span class="comment"># 否者 /static 会跳转到 /root/www/blog 目录</span></div><div class="line">    <span class="attribute">root</span> /root/www/memei-admin;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>配置完 <code>nginx -s reload</code> 重新加载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 如果重新加载无效可以尝试重启nginx</div><div class="line">nginx <span class="_">-s</span> quit</div><div class="line">sudo nginx</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 如果重新加载无效可以尝试重启nginx</div><div class="line">nginx -s quit</div><div class="line">sudo nginx</div></pre></td></tr></table></figure>
 <p>还是有问题可以查看log</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat /var/<span class="built_in">log</span>/nginx/error.log</div><div class="line">cat /var/<span class="built_in">log</span>/nginx/domain.access.log</div></pre></td></tr></table></figure>
 <h2 id="项目打包上传"><a class="header-anchor" href="#项目打包上传">#</a>项目打包上传</h2>
@@ -424,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/29/document-style/" rel="next" title="《阮一峰的中文文档规范》阅读笔记">
-                <i class="fa fa-chevron-left"></i> 《阮一峰的中文文档规范》阅读笔记
+              <a href="/2017/05/25/Vuex-速查表/" rel="next" title="Vuex 速查表">
+                <i class="fa fa-chevron-left"></i> Vuex 速查表
               </a>
             
           </div>
@@ -434,8 +434,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/25/Vuex-速查表/" rel="prev" title="Vuex 速查表">
-                Vuex 速查表 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/29/document-style/" rel="prev" title="《阮一峰的中文文档规范》阅读笔记">
+                《阮一峰的中文文档规范》阅读笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -508,7 +508,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -519,7 +519,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -530,7 +530,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

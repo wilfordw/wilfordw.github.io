@@ -368,20 +368,20 @@
 <a id="more"></a>
 <h2 id="hexo安装配置"><a class="header-anchor" href="#hexo安装配置">#</a>Hexo安装配置</h2>
 <h3 id="安装hexo"><a class="header-anchor" href="#安装hexo">#</a>安装<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a></h3>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-<span class="keyword">cli</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></div></pre></td></tr></table></figure>
 <h3 id="新建站点文件"><a class="header-anchor" href="#新建站点文件">#</a>新建站点文件</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init <span class="tag">&lt;<span class="name">foldname</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;foldname&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="创建新post"><a class="header-anchor" href="#创建新post">#</a>创建新post</h3>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo n <span class="string">'name'</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo n <span class="string">'name'</span></span></div></pre></td></tr></table></figure>
 <h3 id="更新"><a class="header-anchor" href="#更新">#</a>更新</h3>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo g</span></div></pre></td></tr></table></figure>
 <h3 id="清理"><a class="header-anchor" href="#清理">#</a>清理</h3>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo clean <span class="comment">#每次发布前建议清理下，尤其是在更改样式和脚本的时候，会有缓存</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo clean <span class="comment">#每次发布前建议清理下，尤其是在更改样式和脚本的时候，会有缓存</span></span></div></pre></td></tr></table></figure>
 <h3 id="本地服务器"><a class="header-anchor" href="#本地服务器">#</a>本地服务器</h3>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo s</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo s</span></div></pre></td></tr></table></figure>
 <h2 id="next主题安装配置"><a class="header-anchor" href="#next主题安装配置">#</a><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next主题</a>安装配置</h2>
 <h3 id="下载"><a class="header-anchor" href="#下载">#</a>下载</h3>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">cd</span> your-hexo-site</div><div class="line">$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> your-hexo-site</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span></div></pre></td></tr></table></figure>
 <h3 id="站点配置"><a class="header-anchor" href="#站点配置">#</a>站点配置</h3>
 <p>站点目录下的<code>_config.yml</code>文件</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#站点标题</span></div><div class="line"><span class="symbol">title:</span> LOOSTUDY</div><div class="line"><span class="meta">#站点小标题</span></div><div class="line"><span class="symbol">subtitle:</span> 绽放时厚积薄发 等待时心如止水</div><div class="line"><span class="meta">#站点描述</span></div><div class="line"><span class="symbol">description:</span> 绽放时厚积薄发 等待时心如止水</div><div class="line"><span class="meta">#作者名</span></div><div class="line"><span class="symbol">author:</span> loostudy</div><div class="line"><span class="meta">#选择语言简体中文</span></div><div class="line"><span class="symbol">language:</span> <span class="built_in">zh</span>-Hans</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"><span class="meta">#选择主题next</span></div><div class="line"><span class="symbol">theme:</span> next</div></pre></td></tr></table></figure>
@@ -401,7 +401,7 @@
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tages: <span class="string">[标签1,标签2,...标签n]</span></div></pre></td></tr></table></figure>
 <h2 id="next标签分类页面"><a class="header-anchor" href="#next标签分类页面">#</a>Next标签<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>分类<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>页面</h2>
 <h3 id="新建"><a class="header-anchor" href="#新建">#</a>新建</h3>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#新建标签页</span></div><div class="line">$ hexo <span class="keyword">new</span> <span class="type">page</span> tags</div><div class="line"><span class="meta">#新建分类页</span></div><div class="line">$ hexo <span class="keyword">new</span> <span class="type">page</span> categories</div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#新建标签页</span></div><div class="line">$ hexo new<span class="built_in"> page </span>tags</div><div class="line"><span class="comment">#新建分类页</span></div><div class="line">$ hexo new<span class="built_in"> page </span>categories</div></pre></td></tr></table></figure>
 <h3 id="修改标签分类页面内容"><a class="header-anchor" href="#修改标签分类页面内容">#</a>修改标签分类页面内容</h3>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">标签</span></div><div class="line"><span class="attr">date:</span> <span class="number">2014</span><span class="bullet">-12</span><span class="bullet">-22</span> <span class="number">12</span><span class="string">:39:04</span></div><div class="line"><span class="attr">type:</span> <span class="string">"tags"</span></div><div class="line"><span class="attr">comments:</span> <span class="literal">false</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> <span class="string">分类</span></div><div class="line"><span class="attr">date:</span> <span class="number">2014</span><span class="bullet">-12</span><span class="bullet">-22</span> <span class="number">12</span><span class="string">:39:04</span></div><div class="line"><span class="attr">type:</span> <span class="string">"categories"</span></div><div class="line"><span class="attr">comments:</span> <span class="literal">false</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
@@ -411,7 +411,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">---</span></div><div class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></div><div class="line"><span class="attr">categories:</span></div><div class="line"><span class="attr">tags:</span></div><div class="line"><span class="meta">---</span></div><div class="line"><span class="string">简单说明</span></div><div class="line"><span class="string">&lt;!--</span> <span class="string">more</span> <span class="bullet">--&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="部署到codiing"><a class="header-anchor" href="#部署到codiing">#</a>部署到Codiing</h2>
 <h3 id="安装hexo-deployer-git"><a class="header-anchor" href="#安装hexo-deployer-git">#</a>安装<code>hexo-deployer-git</code></h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git --save</span></div></pre></td></tr></table></figure>
 <h3 id="修改配置"><a class="header-anchor" href="#修改配置">#</a>修改配置</h3>
 <p>这里一定要用master分支，coding-pages分支测试无效</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repo</span>:</div><div class="line">    <span class="attribute">coding</span>: <span class="attribute">https</span>:<span class="comment">//git.coding.net/loostudy/loostudy.coding.me.git,master</span></div></pre></td></tr></table></figure>
@@ -431,7 +431,7 @@
 </ul>
 <hr>
 <p>可以使用下面语句设置git大小写敏感，防止下次出现这样的问题：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git <span class="built_in">config</span> core.ignorecase <span class="literal">false</span></div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">git<span class="built_in"> config </span>core.ignorecase <span class="literal">false</span></div></pre></td></tr></table></figure>
 <hr>
 <h2 id="参考资料"><a class="header-anchor" href="#参考资料">#</a>参考资料</h2>
 <hr class="footnotes-sep">
@@ -491,15 +491,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/05/Hexo写作必备/" rel="next" title="Hexo写作必备">
-                <i class="fa fa-chevron-left"></i> Hexo写作必备
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/05/Hexo写作必备/" rel="prev" title="Hexo写作必备">
+                Hexo写作必备 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -571,7 +571,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +582,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +593,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

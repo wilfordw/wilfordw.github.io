@@ -368,7 +368,7 @@
 <p><a href="https://github.com/LaraDock/laradock" target="_blank" rel="external">Laradock</a>提供了一个完成的docker-compose来简化laravel环境的配置，<br>
 <a href="https://github.com/RystLee/DevDock" target="_blank" rel="external">Laradock简洁版</a>是网友在Laradock基础上进行的简化，适合自己自定义的时候参考学习</p>
 <h2 id="命令"><a class="header-anchor" href="#命令">#</a>命令</h2>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 通过Dockerfile 构建镜像</span></div><div class="line">docker bulid &#123;image_name&#125; &#123;/path/to/Dockerfile&#125;</div><div class="line"></div><div class="line"><span class="comment"># 创建容器</span></div><div class="line">docker <span class="keyword">run</span><span class="bash"> [OPTIONS] IMAGE [COMMAND] [ARG...] </span></div><div class="line">docker <span class="keyword">run</span><span class="bash"> <span class="_">-d</span> --name db1 -v `<span class="built_in">pwd</span>`:/data:rw -p 8001:3306 mysql</span></div><div class="line"></div><div class="line"><span class="comment"># 查看容器运行状态</span></div><div class="line">docker ps</div><div class="line"></div><div class="line"><span class="comment"># 查看Log排错</span></div><div class="line">docker logs</div><div class="line"></div><div class="line"><span class="comment"># 可以删除某个容器。</span></div><div class="line">docker rm container_name/container_id </div><div class="line"></div><div class="line"><span class="comment"># 启动某个容器。</span></div><div class="line">docker start container_name/container_id</div><div class="line"></div><div class="line"><span class="comment"># 终止某个容器</span></div><div class="line">docker stop container_name/container_id</div><div class="line"></div><div class="line"><span class="comment"># 在容器中执行 /bin/bash，执行该命令之后将可以以交互命令行的方式操作容器，另外 /bin/bash 可以替换成任意可执行命令。</span></div><div class="line">docker exec -it contaner_name /bin/bash</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 通过Dockerfile 构建镜像</span></div><div class="line">docker bulid &#123;image_name&#125; &#123;/path/to/Dockerfile&#125;</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 创建容器</span></div><div class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...] </div><div class="line">docker run -d --name db1 -v `pwd`:/data:rw -p 8001:3306 mysql</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 查看容器运行状态</span></div><div class="line">docker ps</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 查看Log排错</span></div><div class="line">docker logs</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 可以删除某个容器。</span></div><div class="line">docker rm container_name/container_id </div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 启动某个容器。</span></div><div class="line">docker start container_name/container_id</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 终止某个容器</span></div><div class="line">docker stop container_name/container_id</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 在容器中执行 /bin/bash，执行该命令之后将可以以交互命令行的方式操作容器，另外 /bin/bash 可以替换成任意可执行命令。</span></div><div class="line">docker exec -it contaner_name /bin/bash</div></pre></td></tr></table></figure>
 <h2 id="dockerfile"><a class="header-anchor" href="#dockerfile">#</a>Dockerfile</h2>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 依赖镜像</span></div><div class="line">FORM image_name</div><div class="line"></div><div class="line"><span class="comment"># 镜像作者信息</span></div><div class="line"><span class="keyword">MAINTAINER</span> author &lt;author_email&gt; </div><div class="line"></div><div class="line"><span class="comment"># 在shell或者 exec的环境下执行的命令</span></div><div class="line"><span class="keyword">RUN</span><span class="bash"> &lt;<span class="built_in">command</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment"># 将主机文件复制到容器中</span></div><div class="line"><span class="keyword">ADD</span><span class="bash"> /path/to/sourcefile/<span class="keyword">in</span>/host /path/to/targetfile/<span class="keyword">in</span>/container  </span></div><div class="line"></div><div class="line"><span class="comment"># 指定容器启动默认执行的命令</span></div><div class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"executable"</span>,<span class="string">"param1"</span>,<span class="string">"param2"</span>]</span></div><div class="line"></div><div class="line"><span class="comment"># 指定容器在运行时监听的端口</span></div><div class="line"><span class="keyword">EXPOSE</span> &lt;port&gt;</div><div class="line"></div><div class="line"><span class="comment"># 指定RUN、CMD与 ENTRYPOINT 命令的工作目录</span></div><div class="line"><span class="keyword">WORKDIR</span><span class="bash"> /path/to/workdir/<span class="keyword">in</span>/container</span></div><div class="line"></div><div class="line"><span class="comment"># 授权访问从容器内到主机上的目录</span></div><div class="line"><span class="keyword">VOLUME</span><span class="bash"> [<span class="string">"/data"</span>]</span></div></pre></td></tr></table></figure>
 <p>另外，在国内使用 docker（以 ubuntu 为例）， Dockerfile 第一个执行的命令最好为：</p>
@@ -426,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/30/laravel-learn-list/" rel="next" title="Laravel学习清单">
-                <i class="fa fa-chevron-left"></i> Laravel学习清单
+              <a href="/2017/05/29/document-style/" rel="next" title="《阮一峰的中文文档规范》阅读笔记">
+                <i class="fa fa-chevron-left"></i> 《阮一峰的中文文档规范》阅读笔记
               </a>
             
           </div>
@@ -436,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/29/document-style/" rel="prev" title="《阮一峰的中文文档规范》阅读笔记">
-                《阮一峰的中文文档规范》阅读笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/30/laravel-learn-list/" rel="prev" title="Laravel学习清单">
+                Laravel学习清单 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -521,7 +521,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -532,7 +532,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
